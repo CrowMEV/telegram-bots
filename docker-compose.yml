@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  bots:
+    build: ./
+    ports:
+      - 80:8000
+    restart: always
+    volumes:
+      - ./app:/app/
+    env_file:
+      - .env
+    entrypoint: ["/bin/sh", "run.sh"]
